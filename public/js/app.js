@@ -2,7 +2,7 @@ var selectTags = function(event) {
   event.preventDefault();
 
   var activeLink = document.querySelector('[data-show-tag].active')
-  if(activeLink) {
+  if (activeLink) {
     activeLink.classList.remove('active');
   }
 
@@ -11,7 +11,25 @@ var selectTags = function(event) {
   
   var tag = currentLink.getAttribute('data-show-tag');
 
-  console.log(tag);
+  var allContent = document.querySelectorAll('[data-tags]');
+
+  if (tag == 'all') {    
+    if (allContent) {
+      for (var i = 0, len = allContent.length; i < len; i++) {
+        allContent[i].hidden = false;
+      }
+    }
+    return;
+  }
+
+  for (var i = 0, len = allContent.length; i < len; i++) {
+    allContent[i].hidden = true;
+  }
+
+  var selectedContent = document.querySelectorAll('[data-tags*="' + tag + '"]');
+  for (var i = 0, len = selectedContent.length; i < len; i++) {
+    selectedContent[i].hidden = false;
+  }
 };
 
 
