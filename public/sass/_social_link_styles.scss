@@ -1,0 +1,34 @@
+.social-icons {
+  list-style-type: none;
+  margin: 1.5em 0 1em 0;
+}
+.social-icons li {
+  display: inline;
+}
+%icons {
+  color: $text-color-1;
+  padding: 0.25em 0.35em;
+  &:hover {
+    background-color: $theme-color;
+  }
+}
+.icon-facebook:before {
+  @extend %icons;
+  background-color: $facebook-background;
+}
+.icon-twitter:before {
+  @extend %icons;
+  background-color: $twitter-background;
+}
+.icon-dribbble:before {
+  @extend %icons;
+  background-color: $dribbble-background;
+}
+.icon-linkedin:before {
+  @extend %icons;
+  background-color: $linkedin-background;
+}
+.icon-google-plus:before {
+  @extend %icons;
+  background-color: $google-plus-background;
+}

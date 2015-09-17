@@ -1,0 +1,41 @@
+form {
+  width: 100%;
+  display: inline-block;
+  @media screen and (min-width: 50em) {
+    width: calc(50% - 0.5em);
+    float: left;
+    margin: 1em 0.5em 0 0;
+  }
+  button {
+    width: 100%;
+    color: $theme-color;
+    background-color: $light-background;
+    margin-bottom: 2em;
+    @media screen and (min-width: 50em) {
+      width: 40%;
+      float: right;
+    }
+  }
+}
+textarea {
+  box-sizing: border-box;
+  background-color: $input_background;
+  border: none;
+  padding: 1.5em;
+  width: 100%;
+  margin: 0.5em auto;
+  &::-webkit-input-placeholder {
+    color: $text-color-1;
+  }
+}
+input {
+  @extend textarea;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+  
+.messageinput {
+  height: 10em;
+  margin-bottom: 1em;
+}

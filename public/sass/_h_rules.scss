@@ -1,0 +1,60 @@
+$wide: 0;
+$narrow: 5%;
+$long: 80%;
+$short: 88%;
+
+.horizontal-rules {
+  position: relative;
+  margin-bottom: 1em;
+}
+%rules {
+  display: inline-block;
+  border-top: 1px solid $accent-border-1;
+  position: absolute;
+  top: 50%;
+  &.on-white {
+    border-color: $text-color-3;
+  }
+}
+@mixin line-L($line-start, $line-end) {
+  @extend %rules;
+  left: $line-start;
+  right: $line-end;
+  @media screen and (min-width: 50em) {
+    left: $line-start;
+    right: $line-end - 16%;
+  }
+}
+@mixin line-R($line-start, $line-end) {
+  @extend %rules;
+  left: $line-end;
+  right: $line-start;
+  @media screen and (min-width: 50em) {
+    left: $line-end - 16%;
+    right: $line-start;
+  }
+}
+.rule-R-long {
+  @include line-R($wide, $long);
+  &.narrow {
+    @include line-R($narrow, $long);
+  }
+}
+.rule-L-long {
+  @include line-L($wide, $long);
+  &.narrow {
+    @include line-L($narrow, $long);
+  }
+}
+.rule-R-short {
+  @include line-R($wide, $short);
+  &.narrow {
+    @include line-R($narrow, $short);
+  }
+}
+.rule-L-short {
+  @include line-L($wide, $short);
+  &.narrow {
+    @include line-L($narrow, $short);
+  }
+}

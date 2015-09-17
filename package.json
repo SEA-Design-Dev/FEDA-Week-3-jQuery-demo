@@ -1,0 +1,25 @@
+{
+  "name": "simple_server",
+  "version": "0.1.0",
+  "description": "simple server to launch Week 2 assignment",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mollyfish/advanced-presentation-AT-MK-wip.git"
+  },
+  "author": "kent.molly@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mollyfish/advanced-presentation-AT-MK-wip/issues"
+  },
+  "homepage": "https://github.com/mollyfish/advanced-presentation-AT-MK-wip#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4"
+  }
+}

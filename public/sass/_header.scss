@@ -1,0 +1,40 @@
+.header {
+  position: relative;
+  background-image: url("../images/top-bkgrnd.jpg");
+  /* TA Dale said a relative path like this, inside our css file, was fine */
+  background-position: top;
+  background-repeat: no-repeat;
+  height: 15em;
+  
+  padding-bottom: 1em;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  @media screen and (min-width: 50em) {
+    height: 25em;
+  }
+  h1 {
+    padding: 1em .5em;
+    width: 90%;
+    font-weight: 300;
+    line-height: 1.5;
+    @media screen and (min-width: 50em) {
+      max-width: 28em;
+      font-size: 1.618em;
+    }
+  }
+}
+.icon-droplet:before {
+  margin-bottom: .3em;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: $theme-color;
+  font-size: 3.157em;
+  color: $text-color-1
+  ;
+  padding: 0.25em;
+}
+.underline {
+  border-bottom: 1px solid $theme-color;
+}

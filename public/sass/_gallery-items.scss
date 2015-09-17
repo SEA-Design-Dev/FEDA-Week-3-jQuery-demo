@@ -1,0 +1,65 @@
+.gallery-flex {
+  @media screen and (min-width: 50em) {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-flex-direction: row; /*safari also required these to have -webkit*/
+    -webkit-flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -webkit-align-content: flex-start;
+    -webkit-align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: stretch;
+    padding-bottom: 1em;
+  }
+  h4 {
+    font-weight: bold;
+    color: $text-color-2;
+    padding-bottom: 0.5em;
+  }
+  figure {
+    margin: 2em calc(50% - 150px) 1em calc(50% - 150px); /* 150px is half the img width */
+    @media screen and (min-width: 50em) {
+      margin: 0 0 1em 0;
+    }
+  }
+  figcaption {
+    margin-top: 1em;
+    text-align: center;
+  }
+  figure a {
+    display: inline-block;
+    width: 300px;  /* dimensions of img */
+    height: 220px;
+    position: relative;
+    /* defines hover area for fadeout */
+    &:before {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+    /* black fadeout over portfolio link img on hover */
+    &:hover:before {
+      background-color: $hover-mask;
+    }
+  }
+}
+@media screen and (min-width: 50em) {
+  .gallery-flex-item {
+    -webkit-flex-grow: 1;
+    -webkit-flex-shrink: 0;
+    -webkit-flex-basis: 300px;/* set to match img width of 300*/
+    width: 300px; /*img dimensions*/
+    height: 250px;
+  }
+  .thumbnail {
+    padding: 1em 0.5em;
+  }
+}

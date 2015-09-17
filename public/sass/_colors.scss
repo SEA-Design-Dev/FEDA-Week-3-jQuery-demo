@@ -1,0 +1,27 @@
+// theme orange
+$theme-color: #fd6632; /* orange */
+$med-theme-color: darken($theme-color, 40%);
+$dk-theme-color: darken($theme-color, 20%);
+
+$lightest: #fff;
+$darkest: #2a2a2e;
+
+$text-color-1: $lightest;
+$text-color-2: $darkest;
+$text-color-3: rgba(124, 131, 135, 1);
+
+$light-background: $lightest;
+$dark-background: $darkest;
+$hover-mask: rgba(0, 0, 0, 0.6);
+
+$accent-border-1: #fff;
+$accent-border-2: rgba(124, 131, 135, 0.5);
+
+$med-dark-background: lighten($dark-background, 15%);
+$input_background: rgba(126, 50, 24, 0.8);
+
+$facebook-background: #3B5998;
+$twitter-background: #00aced;
+$dribbble-background: #ea4c89;
+$linkedin-background: #007bb6;
+$google-plus-background: #ecbb0a;

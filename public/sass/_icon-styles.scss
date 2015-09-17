@@ -1,0 +1,68 @@
+/* Created via icomoon.com */
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?-3u1mbw');
+	src:url('fonts/icomoon.eot?#iefix-3u1mbw') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?-3u1mbw') format('truetype'),
+		url('fonts/icomoon.woff?-3u1mbw') format('woff'),
+		url('fonts/icomoon.svg?-3u1mbw#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+%icon-fonts {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+$icons: (droplet '\e601') (quill '\e600') (flask '\e606') (gear '\e605') (facebook '\e60b') (twitter '\e60c') (dribbble '\e60d') (linkedin '\e60e') (google-plus '\e60a') (go-right '\e608') (go-left '\e609') (envelope '\e602') (pushpin '\e603') (mobile '\e604');
+
+@each $icon in $icons {
+	.icon-#{nth($icon, 1)}:before {
+		content: nth($icon, 2);
+		@extend %icon-fonts;
+	}
+}
+
+/* changed to :after b/c :before is being used for
+ the background change on hover in main.css */
+a.icon-see-more:after { 
+	content: "\e607";
+	@extend %icon-fonts;
+}
+.icon-quill:before, .icon-flask:before, .icon-gear:before  {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: $light-background;
+  font-size: 4em;
+  color: $theme-color;
+  padding: 0.25em;
+}
+/* changed to :after b/c :before is being used for
+ the background change on hover */
+.icon-see-more:after {
+  display: inline-block;
+  position: absolute;
+  top: calc(50% - 28px);
+  left: calc(50% - 28px);
+  border-radius: 50%;
+  background-color: $theme-color;
+  font-size: 2.369em;
+  color: $text-color-1;
+  opacity: 0;
+  padding: 0.25em;
+}
+.icon-see-more:hover:after {
+  opacity: 1;
+}
+.icon-envelope:before, .icon-pushpin:before, .icon-mobile:before {
+  padding-right: 0.5em;
+  display: inline-block;
+}

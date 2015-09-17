@@ -1,0 +1,13 @@
+button {
+  border: none;
+  background-color: $theme-color;
+  color: $text-color-1;
+  padding: 1em 1.5em;
+  font-size: 0.75em;
+  &:hover {
+    cursor: pointer;
+  }
+  .about & {
+    padding: 1em 3em;
+  }
+}

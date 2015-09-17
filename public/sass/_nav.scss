@@ -1,0 +1,114 @@
+// --- Nav Sass Component --- //
+
+$flex_basis_topnav: 8em;
+
+@mixin flex_wrapper {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  -webkit-align-content: flex-start;
+}
+@mixin flex_item {
+  -webkit-flex-grow: 1;
+  -webkit-flex-shrink: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+ul {
+  .nav &, .secondary-nav & {
+    list-style-type: none;
+  }
+  .secondary-nav & {
+    width: 100%;
+  }
+}
+li {
+  .top-nav &, .secondary-nav & {
+    text-align: center;
+    padding: .5em;
+  }
+  .top-nav & {
+    border: 1px solid $accent-border-2;
+    font-weight: 300;
+    @media screen and (min-width: 50em) {
+      border: none;
+    }
+  }
+  .secondary-nav & {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0.5em auto;
+    border: 2px solid $accent-border-2;
+    border-radius: 0.5em;
+    @media screen and (min-width: 50em) {
+      padding: 0;
+      margin: 0;
+      border: none;
+      border-radius: 0;
+    }
+  }
+}
+a {
+  .nav & {
+    color: $text-color-3;
+    &:hover {
+      color: $text-color-2;
+    }
+  }
+  .secondary-nav & {
+    @media screen and (min-width: 50em) {
+      display: inline-block;
+      padding: 0.5em;
+      &:hover {
+        color: $text-color-2;
+        background-color: $theme-color;
+      }
+    }
+  }
+}
+.top-nav {
+  padding: auto 0;
+  @media screen and (min-width: 50em) {
+    padding-left: 5em;
+    padding-right: 5em;
+    border-bottom: 1px solid $accent-border-2;
+  }
+}
+
+// Write a @mixin for this stuff?
+.flex-navbar {
+  @include flex_wrapper;
+  -webkit-flex-wrap: wrap;
+  -webkit-align-items: flex-start;
+}
+.flex-nav-item {
+  @include flex_item;
+  -webkit-flex-basis: $flex_basis_topnav;
+  flex-basis: $flex_basis_topnav;
+  @media screen and (min-width: 50em) {
+    -webkit-flex-basis: $flex_basis_topnav / 2;
+    flex-basis: $flex_basis_topnav / 2;
+  }
+}
+// Portfolio Nav
+.secondary-nav {
+  @media screen and (min-width: 50em) {
+    width: 90%;
+    margin: 0 auto;
+    /* secondary nav wrapper */
+    .flex-secnav {
+      @include flex_wrapper;
+      flex-wrap: nowrap;
+      align-items: stretch;
+    }
+    /* secondary nav items */
+    .flex-secnav-item {
+      @include flex_item;
+      -webkit-flex-basis: 20em;
+      flex-basis: 20em;
+    }
+  }
+}

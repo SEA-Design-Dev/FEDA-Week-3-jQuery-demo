@@ -1,0 +1,193 @@
+/*&&&&&&&&&&&&&&&&&&&&&&&&&&
+    General styles
+&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+
+// $theme-color: #fd6632; /* orange */
+// $med-theme-color: darken($theme-color, 40%);
+// $dk-theme-color: darken($theme-color, 20%);
+
+// $lightest: #fff;
+// $darkest: #2a2a2e;
+
+// $text-color-1: $lightest;
+// $text-color-2: $darkest;
+// $text-color-3: rgba(124, 131, 135, 1);  //dark text
+
+// $light-background: $lightest;
+// $dark-background: $darkest;
+// $hover-mask: rgba(0, 0, 0, 0.6);
+
+// font sizes and padding
+$small_font: 1.777em;
+$large_font: 2.369em;
+$article_padding: 2.5em;
+
+html {
+  font-family: Helvetica, sans-serif;
+  text-align: center;
+}
+body {
+  @media screen and (min-width: 50em) {
+    max-width: 80em;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+article {
+  padding: 2em 2em 1em 2em;
+  @media screen and (min-width: 50em) {
+    padding: 2em 5%;
+  }
+  &.services {
+    position: relative;
+    background-color: $theme-color;
+    color: $text-color-1;
+    font-weight: 100;
+    @media screen and (min-width: 50em) {
+      padding-top: $article_padding + 0.5em;
+      padding-bottom: $article_padding + 0.5em;
+    }
+  }
+  &.portfolio {
+    color: $text-color-3;
+    padding-top: $article_padding;
+  }
+  &.about {
+    background-color: $dark-background;
+    color: $text-color-1;
+    font-weight: 100;
+    padding-bottom: $article_padding;
+    padding-top: $article_padding;
+    @media screen and (min-width: 50em) {
+      padding-top: $article_padding + 0.5em;
+      padding-bottom: $article_padding + 0.5em;
+      .about .flex-paragraphs {
+        padding: 1em 0 2em 0;
+      }
+    }
+  }
+  &.team {
+    color: $text-color-3;
+    padding-top: $article_padding;
+    padding-bottom: $article_padding;
+  }
+  &.contact {
+    color: $text-color-1;
+    font-weight: 100;
+    padding-top: $article_padding;
+    /*below is background to show map thru orange*/
+    background:
+      linear-gradient(
+        rgba($theme-color, 0.92),
+        rgba($theme-color, 0.92)
+      ),
+      url('../images/bkgrnd-map.png');
+    @media screen and (min-width: 50em) {
+      position: relative;
+    }
+  }
+}
+h1 {
+  article & {
+    position: relative;
+    font-size: $small_font;
+    @media screen and (min-width: 50em) {
+      font-size: $large_font;
+    }
+  }
+  .services & {
+    margin-bottom: 1em;
+  }
+  .team & {
+    color: $text-color-2;
+    margin-bottom: 1em;
+    font-weight: normal;
+  }
+}
+h2 {
+  article & {
+    font-size: $small_font;
+  }
+  .about & {
+    position: relative;
+    overflow: hidden;
+    font-size: $small_font;
+    margin: 0 10% 1em 10%;
+    @media screen and (min-width: 50em) {
+      font-size: $large_font;
+    }
+  }
+  .clients-slider h2 {
+    @media screen and (min-width: 50em) {
+      font-size: $large_font;
+    }
+  }
+}
+h3 {
+  .about & {
+    padding: 1em 0 1.5em 0;
+  }
+}
+p {
+  line-height: 1.5;
+  margin: 0 1em;
+  .services & {
+    margin: 0em 0 2em 0;
+  }
+  .about & {
+    margin: 1em 0;
+  }
+  .contact & {
+    margin: 2em 0 1em 0;
+    @media screen and (min-width: 50em) {
+      margin: 2em 4% 1em 4%;
+    }
+  }
+}
+a {
+  text-decoration: none;
+}
+footer {
+  padding: 3em 1em;
+  a {
+    color: $theme-color;
+    &:hover {
+      color: $text-color-3;
+    }
+  }
+}
+.flex-container {
+  /*adapted from flexboxin5.com*/
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.flex-paragraphs {
+  -webkit-flex-direction: row; /* safari mobile needs -webkit- */
+  -webkit-flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -webkit-align-content: flex-start;
+  -webkit-align-items: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: stretch;
+}
+@mixin flex_paragraph($flex_basis_paragraph) {
+  -webkit-flex-grow: 1;
+  -webkit-flex-shrink: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+  -webkit-flex-basis: $flex_basis_paragraph;
+  flex-basis: $flex_basis_paragraph;
+}
+.flex-paragraph-1 {
+  @include flex_paragraph(98%);
+}
+.flex-paragraph-2, .flex-paragraph-3 {
+  @include flex_paragraph(48%);
+  padding-right: 1em;
+}
+
