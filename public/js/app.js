@@ -1,5 +1,4 @@
-// Our "tag" links
-$('[data-show-tag]').click(function(event) {
+var selectTags = function(event) {
   event.preventDefault();
 
   // Remove .active from all active tag links
@@ -18,5 +17,9 @@ $('[data-show-tag]').click(function(event) {
 
   // Show all tagged content that CONTAINS tag
   $('[data-tags*="' + tag + '"]').show();
-});
+};
+
+
+// Our "tag" links
+$('[data-show-tag]').click(selectTags);
 
