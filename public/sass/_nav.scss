@@ -54,7 +54,7 @@ li {
 a {
   .nav & {
     color: $text-color-3;
-    &:hover {
+    &:hover, &.active {
       color: $text-color-2;
     }
   }
@@ -62,7 +62,7 @@ a {
     @media screen and (min-width: 50em) {
       display: inline-block;
       padding: 0.5em;
-      &:hover {
+      &:hover, &.active {
         color: $text-color-2;
         background-color: $theme-color;
       }

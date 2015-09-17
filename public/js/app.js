@@ -2,9 +2,11 @@
 $('[data-show-tag]').click(function(event) {
   event.preventDefault();
 
-  var tag = $(event.currentTarget).data('show-tag');
+  // Remove .active from all active tag links
+  $('[data-show-tag].active').removeClass('active');
 
-  console.log(tag);
+  // Add .active to the current tag link, and return contents of its attribute
+  var tag = $(event.currentTarget).addClass('active').data('show-tag');
 
   if(tag == 'all') {
     $('[data-tags]').show();
