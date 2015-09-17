@@ -1,10 +1,17 @@
 var selectTags = function(event) {
   event.preventDefault();
 
+  var activeLink = document.querySelector('[data-show-tag].active')
+  if(activeLink) {
+    activeLink.classList.remove('active');
   }
 
+  var currentLink = event.currentTarget;
+  currentLink.classList.add('active');
+  
+  var tag = currentLink.getAttribute('data-show-tag');
 
-  console.log(event.currentTarget);
+  console.log(tag);
 };
 
 
